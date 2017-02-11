@@ -6,7 +6,7 @@ import	configureStore	from	'./store/configureStore'
 import './test.scss'
 
 const	store	=	configureStore()
-
+setTimeout(()	=>	{
 render(
     <Provider	store={store}>
         <div	className='app'>	{/*	обернули	все	в	.app	*/}
@@ -14,4 +14,4 @@ render(
         </div>
     </Provider>,
     document.getElementById('root')
-)
+)}, 1000)
