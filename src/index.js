@@ -3,10 +3,11 @@ import	{	render	}	from	'react-dom'
 import	{	Provider	}	from	'react-redux'
 import	App	from	'./containers/App'
 import	configureStore	from	'./store/configureStore'
-import './test.scss'
+import 'reset-css/_reset.scss'
+import './body.scss'
 
-const	store	=	configureStore()
-setTimeout(()	=>	{
+const	store	=	configureStore();
+
 render(
     <Provider	store={store}>
         <div	className='app'>	{/*	обернули	все	в	.app	*/}
@@ -14,4 +15,4 @@ render(
         </div>
     </Provider>,
     document.getElementById('root')
-)}, 1000)
+);

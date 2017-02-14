@@ -1,0 +1,39 @@
+$borderContentCol: #ecf0ff;
+$buttonCol: #b1bbc6;
+$borderCol: #c0e2ff;
+$menuCol: #36344e;
+$hoverCol: rgba(0,0,0,0.5);
+$menuHovFontCol: #54faff;
+
+.nav-menu{
+  border-bottom: 4px solid $borderContentCol;
+
+  .nav-menu-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: $buttonCol;
+
+    .nav-menu-list__li{
+      width: 100%;
+      margin: 0;
+      padding: 10px 10px;
+      font-weight: bold;
+      font-size: 1em;
+      color: $menuCol;
+      text-align: center;
+    }
+    .nav-menu-list__li+.nav-menu-list__li{
+      border-left: 2px solid $borderCol;
+    }
+
+    .nav-menu-list__li:hover{
+      cursor: pointer;
+      color: $menuHovFontCol;
+      background-color: $hoverCol;
+    }
+  }
+}

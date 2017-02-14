@@ -1,29 +1,42 @@
 import	React,	{	Component	}	from	'react'
-import	{	bindActionCreators	}	from	'redux'
 import	{	connect	}	from	'react-redux'
-import	User	from	'../components/User'
-import	Page	from	'../components/Page'
-import	*	as	pageActions	from	'../actions/PageActions'
+import	*	as	galleryActions	from	'../actions/galleryActions'
+import	{	bindActionCreators	}	from	'redux'
+
+//Components:
+import	Header	from	'../components/header/Header'
+import	Nav	from '../components/nav/Nav'
+import  Gallery from '../components/gallery/Gallery'
+import  Footer from '../components/footer/Footer'
+
+
 
 class	App	extends	Component	{
-    render()	{
-        const	{	user,	page	}	=	this.props
-        const	{	getPhotos	}	=	this.props.pageActions
+    render()
+    {
+        const {getDataGal} = this.props.galleryActions;
+        const {gallery} = this.props;
+
+
         return	<div>
-            <User	name={user.name}	/>
-            <Page	photos={page.photos}	year={page.year}	getPhotos={getPhotos} fetching={page.fetching}	/>
+            <Header/>
+            <Nav/>
+            <Gallery getDataGal={getDataGal} dataList={gallery.list}/>
+            <Footer/>
         </div>
     }
 }
+
 function	mapStateToProps(state)	{
-    return	{
-        user:	state.user,
-        page:	state.page
+   return	{
+       gallery: state.gallery
     }
 }
+
 function	mapDispatchToProps(dispatch)	{
     return	{
-        pageActions:	bindActionCreators(pageActions,	dispatch)
+        galleryActions: bindActionCreators(galleryActions,	dispatch)
     }
 }
+
 export	default	connect(mapStateToProps,	mapDispatchToProps)(App)

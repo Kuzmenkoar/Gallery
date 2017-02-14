@@ -1,0 +1,73 @@
+$figCaptionCol: #ecf0ff;
+$menuHovFontCol: #54faff;
+$hoverCol: rgba(0,0,0,0.5);
+$galleryBackCol: #ecf0ff;
+
+.shop{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding-bottom: 40px;
+  background-color: $galleryBackCol;
+
+  .shop-element{
+    margin: 10px 1%;
+    width: 23%;
+    position: relative;
+    padding-top: 5px;
+  }
+  .shop-element-figure{
+    display: flex;
+    justify-content: center;
+  }
+  .shop-element-figure__img{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 300px;
+  }
+
+  .shop-element-figcaption{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 30px 20px 0 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    background-color: #b1bbc6;
+
+    .shop-element-figcaption__name, .shop-element-figcaption__price{
+      text-align: center;
+      margin: 5px;
+    }
+    .shop-element-figcaption__name{
+      font-weight: normal;
+    }
+  }
+
+  .shop-element-popPap{
+    display: none;
+  }
+  .shop-element:hover .shop-element-popPap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    width: 87%;
+    height: 95%;
+    background: $hoverCol url('search.png') no-repeat 35% 10%;
+    background-size: 60%;
+    cursor: pointer;
+
+    .shop-element-popPap__p{
+      margin: 0 auto 60px auto;
+      font-weight: bold;
+      font-size: 2em;
+      color: $menuHovFontCol;
+    }
+  }
+}

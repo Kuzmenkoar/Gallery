@@ -1,0 +1,20 @@
+$bodyBackColor: #e6e4e2;
+$fontColor: #00170a;
+$widthOfPage: 1300px;
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
+  font-size: 16px;
+  color: $fontColor;
+  overflow: scroll;
+  background-color: $bodyBackColor;
+}
+
+
+#root {
+  //background: $backgroundColor;
+  width: $widthOfPage;
+  margin: 0 auto;
+  //background-color: $backgroundColor1;
+  //border-bottom: 4px solid $backgroundColor2;
+}
