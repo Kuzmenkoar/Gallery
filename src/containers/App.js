@@ -7,7 +7,8 @@ import * as menuActions from '../actions/menuActions'
 
 //Containers:
 import Shop         from './Shop'
-import Contact      from './Contact'
+import Contacts     from './Contact'
+import Detail       from './Details'
 
 //Components:
 import Nav	        from '../components/nav/Nav'
@@ -17,19 +18,20 @@ import Footer       from '../components/footer/Footer'
 class	App	extends	Component	{
     render() {
         //actions:
-        const {getShop, getContact} = this.props.menuActions;
+        const {getContainer} = this.props.menuActions;
         //data:
         const {container} = this.props.menu;
 
         const putContainer = (container) =>{
             switch(container){
                 case 'Shop' : return <Shop/>;
-                case 'Contact' : return <Contact/>;
+                case 'Contact' : return <Contacts/>;
+                case 'Details' : return <Detail/>
                 default: return <Shop/>
         }};
         return <div>
             <Header/>
-            <Nav getShop={getShop} getContact={getContact} />
+            <Nav getContainer={getContainer} />
             {putContainer(container)}
             <Footer/>
         </div>

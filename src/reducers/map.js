@@ -1,7 +1,5 @@
 import	{
-    getZhytomyrskaCoord,
-    getDruzhbyNarodivCoord,
-    getAkademmistechkoCoord
+    getNewCoordination
 }	from	'../constants/map'
 
 const initialState = {
@@ -14,11 +12,7 @@ const initialState = {
 
 export	default	function map (state	=	initialState, action) {
     switch (action.type) {
-        case    getZhytomyrskaCoord:
-            return {...state, center: action.payload};
-        case    getDruzhbyNarodivCoord:
-            return {...state, center: action.payload};
-        case    getAkademmistechkoCoord:
+        case    getNewCoordination:
             return {...state, center: action.payload};
         default:
             return state;

@@ -1,34 +1,12 @@
 import	{
-    getZhytomyrskaCoord,
-    getDruzhbyNarodivCoord,
-    getAkademmistechkoCoord
+    getNewCoordination
 }	from	'../constants/map'
 
-export	function	getZhytomyrska(coordination)	{
+export	function	getCoordination(coordination)	{
     return	(dispatch)	=>	{
 
         dispatch({
-            type:    getZhytomyrskaCoord,
-            payload: coordination
-        });
-    }
-}
-
-export	function	getDruzhbyNarodiv(coordination)	{
-    return	(dispatch)	=>	{
-
-        dispatch({
-            type:    getDruzhbyNarodivCoord,
-            payload: coordination
-        });
-    }
-}
-
-export	function	getAkademmistechko(coordination)	{
-    return	(dispatch)	=>	{
-
-        dispatch({
-            type:    getAkademmistechkoCoord,
+            type:    getNewCoordination,
             payload: coordination
         });
     }

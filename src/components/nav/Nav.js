@@ -3,10 +3,10 @@ import  './nav.scss'
 
 export	default	class	Nav	extends	Component	{
     getShopConteiner(){
-        this.props.getShop('Shop')
+        this.props.getContainer('Shop')
     }
     getContactConteiner(){
-        this.props.getContact('Contact')
+        this.props.getContainer('Contact')
     }
 
     render()	{

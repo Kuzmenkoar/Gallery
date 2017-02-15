@@ -1,7 +1,5 @@
 import	{
-    getContactConteiner,
-    getShopConteiner,
-    getGalleryConteiner
+    getNewContainer
 }	from	'../constants/menu'
 
 const initialState = {
@@ -10,11 +8,7 @@ const initialState = {
 
 export	default	function menu (state	=	initialState, action) {
     switch (action.type) {
-        case    getContactConteiner:
-            return {...state, container: action.payload};
-        case    getShopConteiner:
-            return {...state, container: action.payload};
-        case    getGalleryConteiner:
+        case    getNewContainer:
             return {...state, container: action.payload};
         default:
             return state;

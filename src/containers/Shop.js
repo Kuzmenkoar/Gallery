@@ -3,7 +3,8 @@ import	{	connect	}	from	'react-redux'
 import	{	bindActionCreators	}	from	'redux'
 //Actions:
 import	*	as	galleryActions	from	'../actions/galleryActions'
-import	*	as	paginAction	from	'../actions/paginAction'
+import	*	as	paginAction	    from	'../actions/paginAction'
+import  *   as  menuActions     from '../actions/menuActions'
 
 //Components:
 import Gallery      from '../components/gallery/Gallery'
@@ -13,21 +14,22 @@ class	Shop	extends	Component	{
     render()
     {
         //Functions:
-        const {getDataGal} = this.props.galleryActions;
-        const {getPagination, getNextPagination, getPrevPagination} = this.props.paginAction;
+        const {getDetails} = this.props.galleryActions;
+        const {getPagination} = this.props.paginAction;
+        const {getContainer} = this.props.menuActions;
         //Data:
         const {gallery} = this.props;
         const {pagination} = this.props;
 
         const runPagination= <Pagination dataList={gallery.list} pagination={pagination.pagination}
-                                         getPagination={getPagination} getNextPaginat={getNextPagination}
-                                         getPrevPaginat={getPrevPagination}/>
+                                         getPagination={getPagination}/>
 
-        return	<div>
+        return	<section className='shop'>
             {runPagination}
-            <Gallery getDataGal={getDataGal} dataList={gallery.list} pagination={pagination.pagination}/>
+            <Gallery getDetails={getDetails} dataList={gallery.list} pagination={pagination.pagination}
+                     getContainer={getContainer}/>
             {runPagination}
-        </div>
+        </section>
     }
 }
 
@@ -41,7 +43,8 @@ function	mapStateToProps(state)	{
 function	mapDispatchToProps(dispatch)	{
     return	{
         galleryActions: bindActionCreators(galleryActions,	dispatch),
-        paginAction: bindActionCreators(paginAction, dispatch)
+        paginAction: bindActionCreators(paginAction, dispatch),
+        menuActions: bindActionCreators(menuActions,dispatch)
     }
 }
 

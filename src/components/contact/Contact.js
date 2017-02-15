@@ -1,19 +1,19 @@
-import	React,	{	Component	}	from	'react'
+import	React,	{ Component }	from	'react'
 import  './contact.scss'
 
 export	default	class	Contact	extends	Component	{
     getZhytomyrskaCoord(){
-        this.props.getZhytomyrska({lat: 50.4560768, lng: 30.3649982})
+        this.props.getCoordination({lat: 50.4560768, lng: 30.3649982})
     }
     getDruzhbyNarodivCoord(){
-        this.props.getZhytomyrska({lat: 50.4165508, lng: 30.5442092})
+        this.props.getCoordination({lat: 50.4165508, lng: 30.5442092})
     }
     getAkademmistechkoCoord(){
-        this.props.getZhytomyrska({lat: 50.4650224, lng: 30.3527819})
+        this.props.getCoordination({lat: 50.4650224, lng: 30.3527819})
     }
 
     render()	{
-        return <section className='contact'>
+        return <div>
             <h1 className='contact__h'>Телефони:</h1>
             <ul className='contact-phone'>
                 <li className='contact-phone__item'>
@@ -41,10 +41,12 @@ export	default	class	Contact	extends	Component	{
                     <span className='contact-addressList__span'>Академмістечко</span>
                 </li>
             </ul>
-        </section>
+        </div>
     }
 }
-
+Contact.propTypes	= {
+    //getCoordination: PropTypes.function.isRequired
+};
 
 
 

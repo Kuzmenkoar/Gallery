@@ -6,10 +6,10 @@ export	default	class	Pagination	extends	Component	{
         this.props.getPagination(+val.target.innerText)
     }
     getNextPagination(){
-        this.props.getNextPaginat(this.props.pagination + 1)
+        this.props.getPagination(this.props.pagination + 1)
     }
     getPrevPagination(){
-        this.props.getPrevPaginat(this.props.pagination - 1)
+        this.props.getPagination(this.props.pagination - 1)
     }
 
     render()	{

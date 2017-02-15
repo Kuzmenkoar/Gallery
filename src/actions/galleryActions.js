@@ -1,21 +1,22 @@
 //import axios from 'axios';
-import database from '../../database/gallery.json';
+//import database from '../../database/gallery.json';
 
 import	{
-    getDataGallery
+    //getDataGallery,
+    getDetailOfPaint
 }	from	'../constants/gallery'
 
-export	function	getDataGal()	{
+export	function	getDetails(number)	{
     return	(dispatch)	=>	{
 
         dispatch({
-            type:    getDataGallery,
-            payload: database
+            type:    getDetailOfPaint,
+            payload: number
         });
-        //axios.get('http://localhost/gallery/json/database.json')
-        //    .then(res => {
-        //        const database = res.data;
-
-        //    });
     }
 }
+//axios.get('http://localhost/gallery/json/database.json')
+//    .then(res => {
+//        const database = res.data;
+
+//    });

@@ -1,34 +1,12 @@
 import	{
-    getContactConteiner,
-    getShopConteiner,
-    getGalleryConteiner
+    getNewContainer,
 }	from	'../constants/menu'
 
-export	function	getContact(container)	{
+export	function	getContainer(container)	{
     return	(dispatch)	=>	{
 
         dispatch({
-            type:    getContactConteiner,
-            payload: container
-        });
-    }
-}
-
-export	function	getShop(container)	{
-    return	(dispatch)	=>	{
-
-        dispatch({
-            type:    getShopConteiner,
-            payload: container
-        });
-    }
-}
-
-export	function	getGallery(container)	{
-    return	(dispatch)	=>	{
-
-        dispatch({
-            type:    getGalleryConteiner,
+            type:    getNewContainer,
             payload: container
         });
     }

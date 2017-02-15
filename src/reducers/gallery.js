@@ -1,5 +1,6 @@
 import	{
-    getDataGallery
+    getDataGallery,
+    getDetailOfPaint
 }	from	'../constants/gallery'
 import database from '../../database/gallery.json';
 
@@ -9,8 +10,10 @@ const initialState = {
 
 export	default	function gallery (state	=	initialState, action) {
     switch (action.type) {
-        case    getDataGallery:
+        case getDataGallery:
             return {...state, list: action.payload};
+        case getDetailOfPaint:
+            return {...state, id: action.payload};
         default:
             return state;
     }

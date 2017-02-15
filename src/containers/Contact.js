@@ -8,21 +8,20 @@ import * as mapActions from '../actions/mapActions'
 import Contact   from '../components/contact/Contact'
 import Map from '../components/map/Map'
 
-class	Shop	extends	Component	{
+class	Contacts	extends	Component	{
     render()
     {
         //Actions:
-        const {getZhytomyrska, getDruzhbyNarodiv, getAkademmistechko} = this.props.mapActions;
+        const {getCoordination} = this.props.mapActions;
         //Data:
         const {map} = this.props;
 
-        return	<div>
-            <Contact getZhytomyrska={getZhytomyrska} getDruzhbyNarodiv={getDruzhbyNarodiv}
-                     getAkademmistechko={getAkademmistechko}/>
+        return	<section className='contact'>
+            <Contact getCoordination={getCoordination} />
             <Map  center={map.center} zoom={map.zoom}
                  zhytomyrska={map.zhytomyrska} druzhbyNarodiv={map.druzhbyNarodiv}
                  akademmistechko={map.akademmistechko}/>
-        </div>
+        </section>
     }
 }
 
@@ -38,4 +37,4 @@ function	mapDispatchToProps(dispatch)	{
     }
 }
 
-export	default	connect(mapStateToProps,	mapDispatchToProps)(Shop)
+export	default	connect(mapStateToProps,	mapDispatchToProps)(Contacts)
