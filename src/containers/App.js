@@ -1,42 +1,51 @@
-import	React,	{	Component	}	from	'react'
-import	{	connect	}	from	'react-redux'
-import	*	as	galleryActions	from	'../actions/galleryActions'
+import React,	{	Component	}	from	'react'
+import {	connect	}	from	'react-redux'
 import	{	bindActionCreators	}	from	'redux'
 
+//actions:
+import * as menuActions from '../actions/menuActions'
+
+//Containers:
+import Shop         from './Shop'
+import Contact      from './Contact'
+
 //Components:
-import	Header	from	'../components/header/Header'
-import	Nav	from '../components/nav/Nav'
-import  Gallery from '../components/gallery/Gallery'
-import  Footer from '../components/footer/Footer'
-
-
+import Nav	        from '../components/nav/Nav'
+import Header	    from '../components/header/Header'
+import Footer       from '../components/footer/Footer'
 
 class	App	extends	Component	{
-    render()
-    {
-        const {getDataGal} = this.props.galleryActions;
-        const {gallery} = this.props;
+    render() {
+        //actions:
+        const {getShop, getContact} = this.props.menuActions;
+        //data:
+        const {container} = this.props.menu;
 
-
-        return	<div>
+        const putContainer = (container) =>{
+            switch(container){
+                case 'Shop' : return <Shop/>;
+                case 'Contact' : return <Contact/>;
+                default: return <Shop/>
+        }};
+        return <div>
             <Header/>
-            <Nav/>
-            <Gallery getDataGal={getDataGal} dataList={gallery.list}/>
+            <Nav getShop={getShop} getContact={getContact} />
+            {putContainer(container)}
             <Footer/>
         </div>
     }
 }
 
 function	mapStateToProps(state)	{
-   return	{
-       gallery: state.gallery
+    return	{
+        menu: state.menu
     }
 }
 
 function	mapDispatchToProps(dispatch)	{
     return	{
-        galleryActions: bindActionCreators(galleryActions,	dispatch)
-    }
+        menuActions: bindActionCreators(menuActions, dispatch)
+        }
 }
 
 export	default	connect(mapStateToProps,	mapDispatchToProps)(App)

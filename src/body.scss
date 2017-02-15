@@ -1,6 +1,7 @@
-$bodyBackColor: #e6e4e2;
+$bodyBackColor: #ffffff;
 $fontColor: #00170a;
 $widthOfPage: 1300px;
+$galleryBackCol: #ecf0ff;
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
@@ -15,6 +16,6 @@ body {
   //background: $backgroundColor;
   width: $widthOfPage;
   margin: 0 auto;
-  //background-color: $backgroundColor1;
+  background-color: $galleryBackCol;
   //border-bottom: 4px solid $backgroundColor2;
 }

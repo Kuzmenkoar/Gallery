@@ -2,6 +2,7 @@ $figCaptionCol: #ecf0ff;
 $menuHovFontCol: #54faff;
 $hoverCol: rgba(0,0,0,0.5);
 $galleryBackCol: #ecf0ff;
+$figCapBag: #b1bbc6;
 
 .shop{
   display: flex;
@@ -34,7 +35,7 @@ $galleryBackCol: #ecf0ff;
     margin: 30px 20px 0 20px;
     padding: 10px 20px;
     font-weight: bold;
-    background-color: #b1bbc6;
+    background-color: $figCapBag;
 
     .shop-element-figcaption__name, .shop-element-figcaption__price{
       text-align: center;

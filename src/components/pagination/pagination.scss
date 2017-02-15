@@ -1,0 +1,44 @@
+$paginBackround: #c6afbc;
+$paginFontColor: #397f5b;
+$hoverCol: rgba(0,0,0,0.5);
+$hoverFont: #00e300;
+$galleryBackCol: #ecf0ff;
+
+.pagination{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: $paginFontColor;
+  font-weight: bold;
+  background-color: $galleryBackCol;
+  padding-bottom: 5px;
+
+  .pagination__li, .pagination__li__arrow{
+    background-color: $paginBackround;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1.4em;
+    box-shadow: 3px 3px 4px black;
+    border-radius: 2px;
+  }
+
+  .pagination__li__arrow{
+    padding: 4px 15px 1px;
+  }
+
+  .pagination_active{
+    cursor: default;
+  }
+
+  .pagination__li__arrow:hover, .pagination__li:hover, .pagination_active{
+    background-color: $hoverCol;
+    color: $hoverFont;
+  }
+
+  .pagination_offArrow{
+    visibility: hidden;
+  }
+}
