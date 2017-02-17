@@ -9,6 +9,7 @@ import * as menuActions from '../actions/menuActions'
 import Shop         from './Shop'
 import Contacts     from './Contact'
 import Detail       from './Details'
+import Information  from './Information'
 
 //Components:
 import Nav	        from '../components/nav/Nav'
@@ -25,8 +26,10 @@ class	App	extends	Component	{
         const putContainer = (container) =>{
             switch(container){
                 case 'Shop' : return <Shop/>;
+                case 'Gallery': return <Shop/>;
+                case 'Information': return <Information/>;
                 case 'Contact' : return <Contacts/>;
-                case 'Details' : return <Detail/>
+                case 'Details' : return <Detail/>;
                 default: return <Shop/>
         }};
         return <div>

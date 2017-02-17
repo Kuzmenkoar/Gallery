@@ -37,3 +37,16 @@ $menuHovFontCol: #54faff;
     }
   }
 }
+
+.nav-menu_fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 1300px;
+  margin: 0 auto;
+  z-index: 1;
+}
+.nav-menu_fixed + section{
+  margin-top: 40px;
+}

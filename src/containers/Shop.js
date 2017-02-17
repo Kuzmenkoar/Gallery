@@ -13,7 +13,7 @@ import Pagination   from '../components/pagination/Pagination'
 class	Shop	extends	Component	{
     render()
     {
-        //Functions:
+        //Actions:
         const {getDetails} = this.props.galleryActions;
         const {getPagination} = this.props.paginAction;
         const {getContainer} = this.props.menuActions;
@@ -22,7 +22,7 @@ class	Shop	extends	Component	{
         const {pagination} = this.props;
 
         const runPagination= <Pagination dataList={gallery.list} pagination={pagination.pagination}
-                                         getPagination={getPagination}/>
+                                         getPagination={getPagination}/>;
 
         return	<section className='shop'>
             {runPagination}
