@@ -13,7 +13,7 @@ const initialState = {
 export	default	function map (state	=	initialState, action) {
     switch (action.type) {
         case    getNewCoordination:
-            return {...state, center: action.payload};
+            return {...state, center: action.payload, zoom: 15};
         default:
             return state;
     }

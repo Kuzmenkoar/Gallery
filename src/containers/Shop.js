@@ -14,20 +14,21 @@ class	Shop	extends	Component	{
     render()
     {
         //Actions:
-        const {getDetails} = this.props.galleryActions;
-        const {getPagination} = this.props.paginAction;
+        const {getDetails, getData} = this.props.galleryActions;
+        const {getPagination, getLength} = this.props.paginAction;
         const {getContainer} = this.props.menuActions;
         //Data:
         const {gallery} = this.props;
         const {pagination} = this.props;
 
         const runPagination= <Pagination dataList={gallery.list} pagination={pagination.pagination}
-                                         getPagination={getPagination}/>;
+                                         dataLength={pagination.countElements} viewElem={pagination.viewElem}
+                                         getPagination={getPagination} getLength={getLength} getData={getData}/>;
 
         return	<section className='shop'>
             {runPagination}
-            <Gallery getDetails={getDetails} dataList={gallery.list} pagination={pagination.pagination}
-                     getContainer={getContainer}/>
+            <Gallery getDetails={getDetails} getData={getData} dataList={gallery.list}
+                     viewElem={pagination.viewElem} getContainer={getContainer}/>
             {runPagination}
         </section>
     }

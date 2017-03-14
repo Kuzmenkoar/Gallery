@@ -27,7 +27,7 @@ export	default	class	Nav	extends	Component	{
 
             <ul className='nav-menu-list'>
                 <li className='nav-menu-list__li' onClick={::this.getInformationContainer}> Про художника </li>
-                <li className='nav-menu-list__li' onClick={::this.getShopConteiner}> Доступні на продаж </li>
+                {/*<li className='nav-menu-list__li' onClick={::this.getShopConteiner}> Доступні на продаж </li>*/}
                 <li className='nav-menu-list__li' onClick={::this.getGalleryContainer}> Галерея картин </li>
                 <li className='nav-menu-list__li' onClick={::this.getContactConteiner}> Контакти </li>
             </ul>

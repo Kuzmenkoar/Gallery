@@ -4,7 +4,8 @@
   "description": "test redux",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "data": "mongod --dbpath /home/kuzmenkoar/Desktop/Project/gallery/database"
   },
   "author": "kuzmenkoar",
   "license": "MIT",
@@ -26,6 +27,7 @@
     "file-loader": "^0.10.0",
     "google-map-react": "^0.22.3",
     "json-loader": "^0.5.4",
+    "mongodb": "^2.2.24",
     "node-sass": "^4.5.0",
     "postcss-loader": "^1.2.2",
     "precss": "^1.4.0",

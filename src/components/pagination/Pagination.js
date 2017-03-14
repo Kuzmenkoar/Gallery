@@ -3,18 +3,26 @@ import  './pagination.scss'
 
 export	default	class	Pagination	extends	Component	{
     getNewPagination(val){
-        this.props.getPagination(+val.target.innerText)
+        this.props.getPagination(+val.target.innerText);
+        this.props.getData((+val.target.innerText-1) * this.props.viewElem, this.props.viewElem);
     }
     getNextPagination(){
-        this.props.getPagination(this.props.pagination + 1)
+        this.props.getPagination(this.props.pagination + 1);
+        this.props.getData((this.props.pagination) * this.props.viewElem, this.props.viewElem);
     }
     getPrevPagination(){
-        this.props.getPagination(this.props.pagination - 1)
+        this.props.getPagination(this.props.pagination - 1);
+        this.props.getData((this.props.pagination-2) * this.props.viewElem, this.props.viewElem);
     }
 
     render()	{
-        const dataLength = Math.ceil(this.props.dataList.length/12);
         const pagination = this.props.pagination;
+        const viewElem = this.props.viewElem;
+        let dataLength = this.props.dataLength;
+
+        if (dataLength==false) this.props.getLength();
+        dataLength = Math.ceil(dataLength/viewElem);
+
         let arr = [], i;
         for(i = 1; i<= dataLength; i++) {
             arr[i] = '';

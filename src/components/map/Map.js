@@ -10,7 +10,7 @@ export	default	class	Map	extends	Component	{
         return (
             <div className='map'>
                 <GoogleMap
-                center={map.center} defaultZoom={map.zoom}>
+                center={map.center} zoom={map.zoom}>
                     <div {...map.zhytomyrska} className='map__item'>A</div>
                     <div {...map.druzhbyNarodiv} className='map__item'>B</div>
                     <div {...map.akademmistechko} className='map__item'>C</div>

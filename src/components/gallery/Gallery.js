@@ -1,20 +1,22 @@
-import React, { PropTypes, Component} from 'react'
+import React, {  Component} from 'react'
 import './gallery.scss'
 
 export	default	class	Gallery	extends	Component	{
     getDetailOfItem(item){
-        this.props.getDetails(item + (this.props.pagination-1)*12)
-        this.props.getContainer('Details')
+        this.props.getDetails(item + (this.props.pagination-1)*12);
+        this.props.getContainer('Details');
     }
 
-
     render(){
-        const { dataList, pagination} =	this.props;
-        const array = dataList.slice((pagination - 1) * 12, pagination * 12);
+        const { dataList} =	this.props;
+        const viewElem = this.props.viewElem;
+
+        if (dataList==false) this.props.getData(0,viewElem);
+        //const array = dataList.slice((pagination - 1) * 12, pagination * 12);
 
         return (
             <div>
-                {array.map((data, index) => {
+                {dataList.map((data, index) => {
                     let bountItemClick = this.getDetailOfItem.bind(this, index);
 
                     return <div className='shop-element' key={index} onClick={bountItemClick}>
@@ -34,9 +36,9 @@ export	default	class	Gallery	extends	Component	{
         );
     }
 }
-Gallery.propTypes	= {
-    dataList: PropTypes.array.isRequired
-};
+//Gallery.propTypes	= {
+    //dataList: PropTypes.array.isRequired
+//};
 
 
 
