@@ -2,16 +2,41 @@ import	React,	{	Component	}	from	'react'
 import  './header.scss'
 
 export	default	class	Header	extends	Component	{
+    getShopConteiner(){
+        this.props.getContainer('Shop')
+    }
+    getContactConteiner(){
+        this.props.getContainer('Contact')
+    }
+    getGalleryContainer(){
+        this.props.getContainer('Gallery')
+    }
+    getInformationContainer(){
+        this.props.getContainer('Information')
+    }
+
+
+
     render()	{
-        return <header className='header'>
-                <img className='header__logo' src={require( './logo2.png')} alt='logoError'/>
-                    <span className='header__h'> Картинна галерея </span>
-                    <div className='header-contact'>
-                        <h3 className='header-contact__h'> Телефони:</h3>
-                        <p  className='header-contact__phone'> <span className='header-contact__phone_red'>(067)</span>-44-00-693 </p>
-                        <p className='header-contact__phone'> <span className='header-contact__phone_red'>(063)</span>-63-50-604 </p>
-                        <p className='header-contact__phone'> <span className='header-contact__phone_red'>(063)</span>-63-50-604 </p>
-                    </div>
+        return <header id='top' className='header'>
+                <div className='header-top'>
+                    <p className='header-top__logo'> Grand<span className='header-top__logo_color'>MA</span></p>
+                    <nav className='menu'>
+                        <ul className='menu-list'>
+                            <li className='menu-list__li' onClick={::this.getInformationContainer}> Про художника </li>
+                            <li className='menu-list__li' onClick={::this.getGalleryContainer}> Галерея картин </li>
+                            {/*<li className='menu-list__li' onClick={::this.getShopConteiner}> Доступні на продаж </li>*/}
+                            <li className='menu-list__li' onClick={::this.getContactConteiner}> Контакти </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div className='header-bottom'>
+                    <p className='header-bottom__page'>Gallery</p>
+                    <nav className='breadcrumbs'>
+                        <p className='breadcrumbs__general'>pages</p>
+                        <p className='breadcrumbs__elem'>gallery</p>
+                    </nav>
+                </div>
             </header>
     }
 }

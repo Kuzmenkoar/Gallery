@@ -16,11 +16,11 @@ class	Contacts	extends	Component	{
         //Data:
         const {map} = this.props;
 
-        return	<section className='contact'>
-            <Contact getCoordination={getCoordination} />
+        return	<section className='contacts'>
             <Map  center={map.center} zoom={map.zoom}
                  zhytomyrska={map.zhytomyrska} druzhbyNarodiv={map.druzhbyNarodiv}
                  akademmistechko={map.akademmistechko}/>
+            <Contact getCoordination={getCoordination} />
         </section>
     }
 }

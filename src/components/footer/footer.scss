@@ -1,12 +1,14 @@
-$footerBackCol: #e2e6f5;
+@import '../colors';
+$footerBackCol: $backgroundColorDark;
+$footerColor: $colorWhite;
 
 .footer {
   //background: $backgroundColor;
-  width: 1300px;
   margin: 0 auto;
   background-color: $footerBackCol;
+  color: $footerColor;
 
-  .footer__p{
+  &__p{
     font-size: 0.8em;
     margin: 0;
     padding: 10px 0 5px 0;

@@ -16,7 +16,7 @@ class	Information	extends	Component	{
         //Data:
         //const {gallery} = this.props;
 
-        return	<section className='info'>
+        return	<section className='information'>
             <Info/>
         </section>
     }

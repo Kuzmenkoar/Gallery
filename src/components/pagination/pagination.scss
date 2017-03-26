@@ -1,8 +1,10 @@
-$paginBackround: #c6afbc;
-$paginFontColor: #397f5b;
-$hoverCol: rgba(0,0,0,0.5);
-$hoverFont: #00e300;
-$galleryBackCol: #ecf0ff;
+@import '../colors';
+
+$galleryBackCol: $backgroundColorMain;
+$paginElemBackCol: $backgroundColorPagination;
+$paginArrowColor: $colorWhite;
+$paginColor: $paginationColor;
+$paginActiveColor: $blackColor;
 
 .pagination{
   display: flex;
@@ -10,35 +12,43 @@ $galleryBackCol: #ecf0ff;
   justify-content: center;
   align-items: center;
   width: 100%;
-  color: $paginFontColor;
   font-weight: bold;
   background-color: $galleryBackCol;
-  padding-bottom: 5px;
+  padding-bottom: 40px;
 
-  .pagination__li, .pagination__li__arrow{
-    background-color: $paginBackround;
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
-    font-size: 1.4em;
-    box-shadow: 1px 1px 2px black;
-    border-radius: 2px;
-  }
+  &-li {
+    &__a {
+      margin: 0 15px;
+      cursor: pointer;
+      font-size: 16px;
+      color: $paginColor;
+    }
 
-  .pagination__li__arrow{
-    padding: 4px 15px 1px;
-  }
+    &__arrow {
+      display: block;
+      background-color: $paginElemBackCol;
+      height: 40px;
+      width: 40px;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 40px;
+      font-size: 20px;
+      color: $paginArrowColor;
+      cursor: pointer;
+      margin: 0 50px;
+    }
 
-  .pagination_active{
-    cursor: default;
-  }
+    &__a, &__arrow {
+      text-decoration: none;
+    }
 
-  .pagination__li__arrow:hover, .pagination__li:hover, .pagination_active{
-    background-color: $hoverCol;
-    color: $hoverFont;
-  }
+    &_active {
+      cursor: default;
+      color: $paginActiveColor;
+    }
 
-  .pagination_offArrow{
-    visibility: hidden;
+    &_offArrow {
+      visibility: hidden;
+    }
   }
 }

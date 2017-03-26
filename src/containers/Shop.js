@@ -25,8 +25,7 @@ class	Shop	extends	Component	{
                                          dataLength={pagination.countElements} viewElem={pagination.viewElem}
                                          getPagination={getPagination} getLength={getLength} getData={getData}/>;
 
-        return	<section className='shop'>
-            {runPagination}
+        return	<section className='gallery'>
             <Gallery getDetails={getDetails} getData={getData} dataList={gallery.list}
                      viewElem={pagination.viewElem} getContainer={getContainer}/>
             {runPagination}

@@ -29,18 +29,26 @@ export	default	class	Pagination	extends	Component	{
         }
 
         return <ul className='pagination'>
-            <li className={(pagination === 1) ? 'pagination_offArrow pagination__li__arrow'
-                : 'pagination__li__arrow'} onClick={pagination > 1 ? ::this.getPrevPagination : null}>
-                <img src={require('./arrowLeft.png')}  alt='&larr;'/>
+            <li  className='pagination-li' onClick={pagination > 1 ? ::this.getPrevPagination : null}>
+                <a className={(pagination === 1) ? 'pagination-li_offArrow pagination-li__arrow'
+                    : 'pagination-li__arrow'} href='#top'>
+                    &lt;
+                </a>
             </li>
 
             { arr.map((val, id)=>{
-                return <li className={(id === pagination) ? 'pagination__li pagination_active'
-                    : 'pagination__li'} key={id} onClick={id === pagination? null : ::this.getNewPagination }>{id}</li>
+                return <li className='pagination-li' key={id} onClick={id === pagination? null : ::this.getNewPagination }>
+                        <a className={(id === pagination) ? 'pagination-li__a pagination-li_active'
+                            : 'pagination-li__a'} href='#top'>
+                            {id}
+                        </a>
+                </li>
             })}
-            <li className={(pagination === dataLength) ? 'pagination_offArrow pagination__li__arrow'
-                : 'pagination__li__arrow'} onClick={pagination < dataLength ? ::this.getNextPagination : null}>
-                <img src={require('./arrowRight.png')}  alt='&rarr;'/>
+            <li className='pagination-li' onClick={pagination < dataLength ? ::this.getNextPagination : null}>
+                <a className={(pagination === dataLength) ? 'pagination-li_offArrow pagination-li__arrow'
+                    : 'pagination-li__arrow'} href='#top'>
+                    &gt;
+                </a>
             </li>
         </ul>
     }

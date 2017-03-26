@@ -1,45 +1,77 @@
-$headerBackColor: #cfd9e4;
-$red: #bb0000;
-$fontColorH: white;
-$fontShadow: #9a1e8e;
+@import '../colors';
+@import 'responsive';
+
+@font-face {
+  font-family: logo;
+  src: url(Dutch801BoldItalic.ttf);
+}
+
+$headerTopBackColor: $backgroundColorDark;
+$headerBottomBackColor: $backgroundColorGray;
+$headerColor: $colorWhite;
+$headerLogoColor: $logoColor;
+$headerHoverBackCol: $backgroundHover;
+$headerHoverBorder: $backgroundHoverDark;
 
 .header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-  background-color: $headerBackColor;
-  padding: 0 50px;
-  box-sizing: border-box;
+  width: 100%;
+  color: $headerColor;
 
-  .header__logo{
-    margin: 0 0 0 30px;
-    height: 80px;
-    max-height: 100%;
-    cursor: pointer;
-  }
+  &-top{
+    background-color: $headerTopBackColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
 
-  .header__h{
-    font-style: italic;
-    font-size: 1.6em;
-    font-weight: bold;
-    color:$fontColorH;
-    text-shadow: 1px 1px 2px black, 0 0 1em $fontShadow;
-  }
+    &__logo{
+      margin-left: 10%;
+      font-size: 50px;
+      font-family: logo;
+      cursor: pointer;
 
-  .header-contact{
-    margin-right: 30px;
-    .header-contact__h{
-      margin: 0 0 5px 0;
-      color: $red;
+      &_color{
+        color: $logoColor;
+      }
     }
-    .header-contact__phone{
-      margin: 0;
-      font-size: 0.9em;
-      .header-contact__phone_red{
-        color: $red;
+
+    & .menu{
+      margin-right: 10%;
+
+      &-list{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        list-style-type: none;
+
+        &__li{
+          margin-right: 5px;
+          padding: 5px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+
+        &__li:hover{
+          background-color: $headerHoverBackCol;
+          border-bottom: 1px solid $headerHoverBorder;
+          border-radius: 1px;
+        }
       }
     }
   }
-}
 
+  &-bottom{
+    background-color: $headerBottomBackColor;
+    //display: flex;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    font-size: 20px;
+    font-weight: bold;
+
+    & .breadcrumbs{
+      display: none;
+    }
+  }
+}

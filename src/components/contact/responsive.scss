@@ -1,0 +1,33 @@
+@import '../colors';
+
+$contactBackgroundWhite: $backgroundColorWhite;
+
+@media only screen and (max-width: 640px) {
+  .contact{
+    .getInTouch{
+      flex-direction: column;
+      align-items: center;
+
+      &-phone{
+        background-color: $backgroundColorWhite;
+        padding: 20px;
+      }
+
+      &-address{
+        margin: 40px 0;
+        background-color: $backgroundColorWhite;
+        padding: 20px;
+      }
+
+      &-email{
+        background-color: $backgroundColorWhite;
+        height: 50px;
+        padding: 20px;
+
+        &__text{
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

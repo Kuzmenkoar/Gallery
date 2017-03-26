@@ -1,0 +1,40 @@
+@media only screen and (max-width: 1382px) and (min-width:  993px) {
+  .gallery-elements{
+    padding: 50px 8%;
+
+    &__header{
+      margin-bottom: 40px;
+    }
+
+    & .element{
+      width: 31%;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 641px) {
+  .gallery-elements{
+    padding: 25px 5%;
+
+    &__header{
+      margin-bottom: 20px;
+    }
+
+    & .element{
+      width: 47%;
+    }
+  }
+}
+@media only screen and (max-width: 640px) {
+  .gallery-elements{
+    padding: 20px 4%;
+
+    &__header{
+      margin-bottom: 15px;
+    }
+
+    & .element{
+      width: 100%;
+    }
+  }
+}

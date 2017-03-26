@@ -1,27 +1,61 @@
-$red: #bb0000;
+@import '../colors';
 
-.info>div{
-  display: flex;
-  justify-content: space-between;
-  margin: 5px 20px;
+$infoBackCol: $backgroundColorMain;
+$infoTextBackCol: $backgroundColorWhite;
+$infoBlackColor: $blackColor;
+$infoGreenColor: $greenColor;
+$infoGrayColor: #b0b4b7;
 
-  .info-figcaption{
-    margin: 0 20px;
+.information {
+  background-color: $infoBackCol;
+  //justify-content: space-between;
+  padding: 100px 10%;
+}
+.information::after{
+  display: table;
+  content: '';
+  clear: both;
+}
 
+.info{
+  background-color: $infoTextBackCol;
+  min-height: 400px;
+  padding-right: 50px;
+  padding-bottom: 10px;
 
-    .info-figcaption__h{
-      margin: 20px 0;
-      text-align: center;
-      color: $red;
-      font-size: 1.5em;
-    }
-
-    .info-figcaption__text{
-      margin-top: 20px;
-      font-size: 1.3em;
-    }
-    .info-figcaption_b{
-      font-weight: bold;
+  &-figure{
+    float: left;
+    &__img{
+      width: 380px;
+      height: 400px;
+      margin-right: 50px;
     }
   }
+
+    &__name{
+      padding-top: 50px;
+      margin: 0 0 20px 50px;
+      font-size: 20px;
+      font-weight: bold;
+      color: $infoBlackColor;
+    }
+
+    &__rank{
+      margin-left: 50px;
+      font-size: 18px;
+      color: $infoGreenColor;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    &__text{
+      margin-top: 20px;
+      margin-left: 20px;
+      margin-right: 50px;
+      color: $infoGrayColor;
+      font-weight: bold;
+      font-size: 16px;
+    }
 }
+
+@import 'responsive';

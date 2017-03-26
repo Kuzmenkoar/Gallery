@@ -1,0 +1,18 @@
+@media only screen and (max-width: 640px) {
+  .detail{
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    &-sidebar{
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column-reverse;
+
+      .sidebar-phone{
+        margin-top: 30px;
+      }
+    }
+  }
+}

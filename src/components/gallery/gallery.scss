@@ -1,74 +1,99 @@
-$figCaptionCol: #ecf0ff;
-$menuHovFontCol: #54faff;
-$hoverCol: rgba(0,0,0,0.5);
-$galleryBackCol: #ecf0ff;
-$figCapBag: #b1bbc6;
+@import '../colors';
 
-.shop>div{
+$galleryBackCol: $backgroundColorMain;
+$galleryColor: $blackColor;
+$galleryElementBackCol: $backgroundColorWhite;
+$galleryGreenColor: $greenColor;
+$galleryColor: $blackColor;
+$galleryButtonBackColStart: #3ccba1;
+$galleryButtonBackColEnd: #89daa1;
+$galleryButtonBorder: $backgroundHoverDark;
+$galleryButtonColor: $colorWhite;
+$galleryGrayColor: $paginationColor;
+
+.gallery-elements{
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  padding-bottom: 40px;
   background-color: $galleryBackCol;
+  padding: 100px 10%;
 
-  .shop-element{
-    margin: 10px 1%;
+  &__header{
+    color: $galleryColor;
+    width: 100%;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  & .element {
+    margin: 15px 1%;
     width: 23%;
     position: relative;
     padding-top: 5px;
-  }
-  .shop-element-figure{
-    display: flex;
-    justify-content: center;
-  }
-  .shop-element-figure__img{
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 300px;
-  }
-
-  .shop-element-figcaption{
     display: flex;
     flex-direction: column;
-    align-content: center;
-    margin: 30px 20px 0 20px;
-    padding: 10px 20px;
-    font-weight: bold;
-    background-color: $figCapBag;
+    align-items: center;
 
-    .shop-element-figcaption__name, .shop-element-figcaption__price{
-      text-align: center;
-      margin: 5px;
+    &-figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $galleryElementBackCol;
+      padding-bottom: 280px;
+
+      &__img {
+        width: 300px;
+        max-width: 100%;
+        height: 400px;
+      }
     }
-    .shop-element-figcaption__name{
-      font-weight: normal;
-    }
-  }
 
-  .shop-element-popPap{
-    display: none;
-  }
-  .shop-element:hover .shop-element-popPap{
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: flex-end;
-    padding: 10px 20px;
-    width: 87%;
-    height: 95%;
-    background: $hoverCol url('search.png') no-repeat 35% 10%;
-    background-size: 60%;
-    cursor: pointer;
+    &-figcaption{
+      margin-left: 40px;
+      width: 260px;
+      text-align: left;
+      font-size: 16px;
+      position: absolute;
+      bottom: 0;
+      padding: 40px 0;
 
-    .shop-element-popPap__p{
-      margin: 0 auto 60px auto;
-      font-weight: bold;
-      font-size: 2em;
-      color: $menuHovFontCol;
+      &__name{
+        margin-bottom: 30px;
+        color: $galleryGreenColor;
+      }
+
+      &__span{
+        font-size: 16px;
+        font-weight: normal;
+        color: $galleryGrayColor;
+      }
+
+      &__dimensions, &__price{
+        margin: 15px 0;
+        color: $galleryColor;
+        font-size: 20px;
+      }
+
+      &__button{
+        width: 150px;
+        background: linear-gradient(to bottom, $galleryButtonBackColStart, $galleryButtonBackColEnd);
+        padding: 20px 0;
+        font-size: 16px;
+        color: $galleryButtonColor;
+        font-weight: bold;
+        border: none;
+        border-bottom: 3px solid $galleryButtonBorder;
+        border-radius: 1px;
+        cursor: pointer;
+        margin-top: 25px;
+        margin-left: 20px;
+      }
+
+      &__button:hover{
+        background: linear-gradient(to top, $galleryButtonBackColStart, $galleryButtonBackColEnd);
+      }
     }
   }
 }
+@import 'responsive';

@@ -1,21 +1,16 @@
-$bodyBackColor: #ffffff;
-$fontColor: #00170a;
-$widthOfPage: 1300px;
-$galleryBackCol: #ecf0ff;
+@import 'components/colors';
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
   font-size: 16px;
-  color: $fontColor;
   overflow: scroll;
-  background-color: $bodyBackColor;
+  width: 100%;
+  max-width: 1980px;
+  min-width: 480px;
+  background-color: $backgroundColorMain;
 }
 
 
 #root {
-  //background: $backgroundColor;
-  width: $widthOfPage;
   margin: 0 auto;
-  background-color: $galleryBackCol;
-  //border-bottom: 4px solid $backgroundColor2;
 }

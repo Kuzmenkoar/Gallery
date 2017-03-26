@@ -1,60 +1,144 @@
-$red: #bb0000;
-$metro: #007f00;
-$metroBackg: #d2eeff;
-$hoverCol: rgba(0,0,0,0.5);
-$hoverFont: #00e300;
+@import '../colors';
+@import 'responsive';
+
+$contactHeaderColor: $blackColor;
+$contactGreenColor: $greenColor;
+$contactRedColor: $redColor;
 
 .contact{
-  padding: 30px;
+  color: $contactHeaderColor;
 
-  .contact__h{
-    margin-left: 20px;
-    color: $red;
-    font-size: 1.5em;
+  &__header{
+    text-align: center;
+    margin-top: 80px;
+    font-size: 34px;
+
   }
 
-  .contact-phone{
-    margin: 40px;
-    font-size: 1.3em;
-    margin-top: 10px;
+  .getInTouch{
+    display: flex;
+    justify-content: space-around;
+    margin: 80px 0;
 
-    .contact-phone_red{
-      color: $red;
-    }
-  }
-  .contact-addressList{
-    margin: 40px;
-    font-size: 1.3em;
-    margin-top: 10px;
+    &-phone{
+      width: 180px;
+      height: 100px;
+      padding: 20px 0;
 
-    .contact-addressList__item{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      background-color: $metroBackg;
-      width: 200px;
-      margin-bottom: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      border: 1px solid black;
-      box-shadow: 1px 2px 3px black;
-      border-radius: 5px;
+      &__header{
+        position: relative;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 20px;
+
+        &_img{
+          position: absolute;
+          left: 30px;
+          background-image: url('images.png');
+          background-position: -30px;
+          width: 15px;
+          height: 15px;
+        }
+      }
     }
-    .contact-addressList__item:hover{
-      background-color: $hoverCol;
-      color: white;
+
+    &-phoneList{
+      color: $contactGreenColor;
+
+      &__item{
+        margin-bottom: 5px;
+        font-weight: 800;
+
+        &_red{
+          margin-left: 25px;
+          color: $contactRedColor;
+        }
+      }
     }
-    .contact-addressList__item:hover .contact-addressList__metro{
-      color: $hoverFont;
+
+    &-address{
+      width: 180px;
+      height: 100px;
+      padding: 20px 10px;
+
+      &__header{
+        position: relative;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 20px;
+
+        &_img{
+          position: absolute;
+          left: 30px;
+          background-image: url('images.png');
+          //background-position: 0px;
+          width: 12px;
+          height: 15px;
+        }
+      }
     }
-    .contact-addressList__metro{
-      font-size: 1.5em;
-      color: $metro;
-      font-weight: bold;
+
+    &-addressList{
+      color: $contactGreenColor;
+
+      &__item{
+        margin-bottom: 5px;
+        cursor: pointer;
+        position: relative;
+
+        &_a{
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          position: absolute;
+        }
+      }
+
+      &__metro{
+        position: absolute;
+        display: block;
+        background-image: url('images.png');
+        background-position: -45px;
+        width: 18px;
+        height: 15px;
+        margin-right: 10px;
+      }
+
+      &__text{
+        font-weight: 800;
+        margin-left: 25px;
+      }
     }
-  }
-  .contact-addressList__span{
-    font-size: 0.9em;
-    margin-left: 5px;
+
+    &-email{
+      width: 180px;
+      height: 100px;
+      padding: 20px 10px;
+
+      &__header{
+        position: relative;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 20px;
+
+        &_img{
+          position: absolute;
+          left: 30px;
+          background-image: url('images.png');
+          background-position: -10px;
+          width: 20px;
+          height: 15px;
+        }
+      }
+
+      &__text{
+        color: $contactGreenColor;
+        margin-left: 20px;
+        font-weight: 800;
+        margin-top: 40px;
+      }
+    }
   }
 }
+
+@import 'responsive';

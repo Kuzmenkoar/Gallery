@@ -3,7 +3,7 @@ import './gallery.scss'
 
 export	default	class	Gallery	extends	Component	{
     getDetailOfItem(item){
-        this.props.getDetails(item + (this.props.pagination-1)*12);
+        this.props.getDetails(item);
         this.props.getContainer('Details');
     }
 
@@ -14,26 +14,24 @@ export	default	class	Gallery	extends	Component	{
         if (dataList==false) this.props.getData(0,viewElem);
         //const array = dataList.slice((pagination - 1) * 12, pagination * 12);
 
-        return (
-            <div>
+        return <div className='gallery-elements'>
+            <h1 className='gallery-elements__header'>Картинна галерея</h1>
                 {dataList.map((data, index) => {
                     let bountItemClick = this.getDetailOfItem.bind(this, index);
 
-                    return <div className='shop-element' key={index} onClick={bountItemClick}>
-                        <figure className='shop-element-figure'>
-                            <img className='shop-element-figure__img' src={require('./image1.png')} alt='error'/>
+                    return <div className='element' key={index}>
+                        <figure className='element-figure'>
+                            <img className='element-figure__img' src={require('./image1.png')} alt='error'/>
                         </figure>
-                        <div className='shop-element-popPap'>
-                            <p className='shop-element-popPap__p'>Детальніше</p>
-                        </div>
-                        <figcaption className='shop-element-figcaption'>
-                            <p className='shop-element-figcaption__name'>{data.name}</p>
-                            <p className='shop-element-figcaption__price'>{data.price} грн</p>
+                        <figcaption className='element-figcaption'>
+                            <h1 className='element-figcaption__name'>{data.name}</h1>
+                            <p className='element-figcaption__price'><span className='element-figcaption__span'>Ціна:  </span>{data.price} грн</p>
+                            <p className='element-figcaption__dimensions'><span className='element-figcaption__span'>Розмір:  </span>{data.dimensions} </p>
+                            <button className='element-figcaption__button' onClick={bountItemClick}>Детальніше</button>
                         </figcaption>
                     </div>
                 })}
             </div>
-        );
     }
 }
 //Gallery.propTypes	= {

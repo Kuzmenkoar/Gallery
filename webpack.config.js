@@ -14,8 +14,8 @@ module.exports	=	{
         filename:	'bundle.js',
         publicPath:	'/static/'
     },
-    module:	{	//Обновлено
-        preLoaders:	[	//добавили	ESlint	в	preloaders
+    module:	{
+        preLoaders:	[
             {
                 test:	/\.js$/,
                 loaders:	['eslint'],
@@ -24,7 +24,7 @@ module.exports	=	{
                 ],
             }
         ],
-        loaders:	[	//добавили	babel-loader
+        loaders:	[
             {
                 loaders:	['react-hot', 'babel-loader'],
                 include:	[
@@ -42,8 +42,8 @@ module.exports	=	{
                 loader: 'file'
             },
             {
-                test: /\.json$/,
-                loader: 'json-loader'
+                test: /\.ttf/,
+                loader: 'file-loader'
             }
         ]
     },

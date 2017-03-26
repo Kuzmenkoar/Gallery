@@ -7,7 +7,7 @@ import	{
 const initialState = {
     pagination :  1,
     countElements : false,
-    viewElem: 12
+    viewElem: 8
 };
 
 export	default	function pagination (state	=	initialState, action) {

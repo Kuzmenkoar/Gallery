@@ -1,18 +1,19 @@
-.map{
+.map {
   width: 100%;
-  height: 700px;
-}
-.map__item {
-  position: absolute;
-  width: 20px;
-  height: 20px;
+  height: 250px;
 
-  border: 5px solid #f44336;
-  border-radius: 30px;
-  background-color: white;
-  text-align: center;
-  color: #3f51b5;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 2px;
+  &__item {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+
+    border: 5px solid #f44336;
+    border-radius: 30px;
+    background-color: white;
+    text-align: center;
+    color: #3f51b5;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 2px;
+  }
 }

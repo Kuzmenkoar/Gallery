@@ -12,7 +12,6 @@ import Detail       from './Details'
 import Information  from './Information'
 
 //Components:
-import Nav	        from '../components/nav/Nav'
 import Header	    from '../components/header/Header'
 import Footer       from '../components/footer/Footer'
 
@@ -33,8 +32,7 @@ class	App	extends	Component	{
                 default: return <Shop/>
         }};
         return <div>
-            <Header/>
-            <Nav getContainer={getContainer} />
+            <Header getContainer={getContainer}/>
             {putContainer(container)}
             <Footer/>
         </div>
