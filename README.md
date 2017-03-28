@@ -1,6 +1,6 @@
 You have to install mongodb and node.js for this project.
 
-After installing this programs folow the instruction:
+After installing this programs follow the instruction:
 
 1) Install modules with command "npm install".
 
