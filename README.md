@@ -1,4 +1,4 @@
-You have to install mongodb and node.js for this project.
+You have to install mongoDB and node.js for this project.
 
 After installing this programs follow the instruction:
 
