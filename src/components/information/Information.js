@@ -5,7 +5,7 @@ export	default	class	Info	extends	Component	{
     render()	{
         return <div className='info'>
             <figure className='info-figure'>
-                <img className='info-figure__img' src={require('./image1.png')} alt='error'/>
+                <img className='info-figure__img' src={require('./author.png')} alt='error'/>
             </figure>
             <h1 className='info__name'>Юрій Пацан</h1>
             <h2 className='info__rank'>Заслужений художник України</h2>

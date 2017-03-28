@@ -7,7 +7,7 @@ export	default	class	detail	extends	Component	{
 
         return <div className='detail'>
             <figure className='detail-figure'>
-                <img className='detail-figure__img' src={require('./image1.png')} alt='error'/>
+                <img className='detail-figure__img' src={require('../../../img/' + data.img)} alt='error'/>
             </figure>
             <aside className='detail-sidebar'>
                 <div className='sidebar-phone'>

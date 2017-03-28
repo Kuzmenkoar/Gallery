@@ -6,6 +6,10 @@ $detailHeaderColor: $blackColor;
 $detailBorderColor: $backgroundColorMain;
 $detailGreenColor: $greenColor;
 
+.details{
+  overflow: hidden;
+}
+
 .detail{
   display: flex;
   flex-direction: row-reverse;

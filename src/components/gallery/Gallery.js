@@ -21,7 +21,7 @@ export	default	class	Gallery	extends	Component	{
 
                     return <div className='element' key={index}>
                         <figure className='element-figure'>
-                            <img className='element-figure__img' src={require('./image1.png')} alt='error'/>
+                            <img className='element-figure__img' src={require('../../../img/' + data.img)} alt='error'/>
                         </figure>
                         <figcaption className='element-figcaption'>
                             <h1 className='element-figcaption__name'>{data.name}</h1>

@@ -1,5 +1,9 @@
 @import 'components/colors';
 
+html{
+  height: 100%;
+}
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
   font-size: 16px;
@@ -8,9 +12,12 @@ body {
   max-width: 1980px;
   min-width: 480px;
   background-color: $backgroundColorMain;
+  height: 100%;
 }
 
 
 #root {
+  min-height: 100%;
   margin: 0 auto;
+  position: relative;
 }
